@@ -35,6 +35,11 @@ export default function Input({ label, type }: Props) {
       label={label}
       variant="filled"
       className="bg-white rounded-xl w-full max-w-xs"
+      size="small"
+      inputProps={{
+        style: { fontSize: 16, paddingTop: 16, paddingBottom: 16 },
+      }}
+      InputLabelProps={{ style: { fontSize: 12 } }}
     />
   );
 }
