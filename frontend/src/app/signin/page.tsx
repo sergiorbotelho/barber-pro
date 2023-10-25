@@ -19,7 +19,7 @@ export default function Sigin() {
   const handleClickShowPassword = () => setShowPassword((show) => !show);
 
   return (
-    <div className="container mx-auto flex flex-col justify-center items-center gap-8 text-white h-screen">
+    <div className="container mx-auto flex flex-col justify-center items-center gap-8 text-white">
       <Image
         alt="Logo Dom Barber"
         src={logoDom}
