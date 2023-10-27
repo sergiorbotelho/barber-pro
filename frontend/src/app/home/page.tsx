@@ -1,6 +1,7 @@
 import Image from "next/image";
 import logoDom from "../../../public/logoDom.png";
 import top from "../../../public/top.jpeg";
+import DomPerfil from "../../../public/DomPerfil.jpeg";
 
 import { FaLocationDot } from "react-icons/fa6";
 import { FaInstagram } from "react-icons/fa6";
@@ -54,15 +55,22 @@ export default function Home() {
         Selecione o serviço
       </h2>
       <div className="flex flex-wrap gap-4 justify-center my-10 ">
-        <CardService title="Corte Mascuino" imgTag="corte" />
-        <CardService title="Barba Alinhada" imgTag="barba" />
-        <CardService title="Sombracelhas" imgTag="sombracelha" />
-        <CardService title="Limpeza de pele" imgTag="limpeza" />
-        <CardService title="Acabamento (cantinho)" imgTag="acabamento" />
+        <CardService title="Corte Mascuino" imgTag="/Corte.jpeg" />
+        <CardService title="Barba Alinhada" imgTag="/Barba.jpeg" />
+        <CardService title="Sombracelhas" imgTag="/Sobrancelhas.jpeg" />
+        <CardService title="Limpeza de pele" imgTag="/Limpeza.jpeg" />
+        <CardService title="Acabamento (cantinho)" imgTag="/Acabamento.jpeg" />
       </div>
       <h2 className="text-white text-xl flex self-start mt-8 mx-12">
         Selecione o profissional
       </h2>
+      <div className="flex my-8 w-36 self-start mx-12">
+        <Image
+          src={DomPerfil}
+          alt="Imagem do barbeiro"
+          className="w-full  rounded-3xl"
+        />
+      </div>
     </div>
   );
 }
