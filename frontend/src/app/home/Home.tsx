@@ -2,16 +2,12 @@
 import Image from "next/image";
 import logoDom from "../../../public/logoDom.png";
 import top from "../../../public/top.jpeg";
-import DomPerfil from "../../../public/DomPerfil.jpeg";
-import { AdapterDayjs } from "@mui/x-date-pickers/AdapterDayjs";
 import { FaLocationDot } from "react-icons/fa6";
 import { FaInstagram } from "react-icons/fa6";
 import { FaFacebook } from "react-icons/fa6";
 import { FaWhatsapp } from "react-icons/fa6";
 import CardService from "@/components/CardService";
 import { useState } from "react";
-import { LocalizationProvider } from "@mui/x-date-pickers/LocalizationProvider";
-import { DatePicker } from "@mui/x-date-pickers/DatePicker";
 
 export default function Home() {
   const [radioButton, setRadioButton] = useState("");
@@ -27,7 +23,7 @@ export default function Home() {
           className="w-full  h-72 object-fill"
         />
       </div>
-      <div className=" flex items-center w-full self-start justify-around">
+      <div className=" flex items-center w-full self-start xl:w-screen justify-around">
         <Image src={logoDom} alt="Imagem barbeiro" width={150} height={150} />
         <div className="flex gap-3">
           <a
@@ -63,7 +59,7 @@ export default function Home() {
       <h2 className="text-white text-xl flex self-start mt-8 mx-12">
         Selecione o serviço
       </h2>
-      <div className="flex flex-wrap gap-6 justify-center my-10  max-w-fit">
+      <div className="flex flex-wrap gap-6 justify-center my-10 ">
         <div className="flex px-10 justify-center items-center w-full ">
           <input
             type="radio"
@@ -91,7 +87,7 @@ export default function Home() {
           />
           <CardService title="Sombracelhas" imgTag="/Sobrancelhas.jpeg" />
         </div>
-        <div className="flex px-10 justify-center items-center w-full ">
+        <div className="flex px-10 justify-center items-center w-full">
           <input
             type="radio"
             name="radioService"
@@ -116,35 +112,22 @@ export default function Home() {
       <h2 className="text-white text-xl flex self-start mt-8 mx-12">
         Selecione o profissional
       </h2>
-      <div className="flex px-10 justify-start items-center w-full mt-10 gap-6">
-        <input
-          type="radio"
-          name="redioPerfil"
-          id="Perfil"
-          onChange={(e) => handleService(e)}
-        />
-        <Image
-          src={DomPerfil}
-          alt="Imagem do barbeiro"
-          className="w-32 rounded-3xl"
-        />
-        <p className="text-white">Dom Onasis</p>
-      </div>
-      <h2 className="text-white text-xl flex self-start mt-8 mx-12">
-        Escolha sua data e horário
-      </h2>
-      <LocalizationProvider dateAdapter={AdapterDayjs}>
-        <DatePicker
-          disablePast
-          sx={{
-            width: "80%",
-            bgcolor: "#FFF",
-            marginTop: 4,
-            marginBottom: 4,
-            borderRadius: 2,
-          }}
-        />
-      </LocalizationProvider>
+      {/* <div className="flex my-8 w-36 self-center mx-12">
+              <RadioGroup
+                aria-labelledby="demo-radio-buttons-group-label"
+                defaultValue="female"
+                name="radio-buttons-group"
+              >
+                <FormControlLabel value="female" control={<Radio />} label="Female" />
+                <FormControlLabel value="male" control={<Radio />} label="male" />
+      
+                <Image
+                  src={DomPerfil}
+                  alt="Imagem do barbeiro"
+                  className="w-full  rounded-3xl"
+                />
+              </RadioGroup>
+            </div> */}
     </div>
   );
 }
